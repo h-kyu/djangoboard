@@ -1,0 +1,11 @@
+{% extends 'board/base.html' %}
+{% block title %}목차{% endblock title %}
+{% block headline%}목차{% endblock %}
+{% block content %}
+
+<ul>
+    <li><button type="button" class="btn btn-success" onclick="location.href='{% url 'board:list' %}'">목록</button></li><br>
+    <li><button type="button" class="btn btn-info" onclick="location.href='{% url 'board:addboard' %}'">등록</button></li>
+</ul>
+
+{% endblock %}

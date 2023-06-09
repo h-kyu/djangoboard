@@ -1,0 +1,17 @@
+{% extends 'board/base.html' %}
+{% block title %}디테일{% endblock title %}
+{% block headline%}세부정보 페이지{% endblock %}
+{% block content %}
+<ul>
+    <li>글내용 날짜: {{ info.regdate}} </li>
+    <li>조회수: {{ info.readcount }} </li>
+    <li>작성자: {{ info.writer }} </li>
+    <li>제목: {{ info.title }}</li> 
+    <li>내용: {{ info.content }}</li>
+</ul>
+<hr>
+<a href="{% url 'board:editboard' info.id %}">수정</a> <br>
+<a href="{% url 'board:deleteboard' info.id %}">삭제</a> <br>
+<a href="{% url 'board:list' %}">목록보기</a> <br>
+
+{% endblock %}

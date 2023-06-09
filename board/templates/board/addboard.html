@@ -1,0 +1,26 @@
+{% extends 'board/base.html' %}
+{% block title %}추가{% endblock title %}
+{% block headline%}추가 페이지{% endblock %}
+{% block content %}
+
+
+<form action="{% url 'board:addboard' %}" method="post">
+    {% csrf_token %}
+    <table class="table">
+        <tbody class="table-group-divider">
+        <tr>
+            <th scope="col">Title: </th>
+            <td><input type="text" name ="title"></td>
+        </tr>
+        <tr>
+            <th scope="col">Writer: </th>
+            <td><input type="text" name ="writer"></td>
+        </tr>
+        <tr>
+            <th scope="col">Content: </th>
+            <td><textarea cols="25" name="content"></textarea></td>
+        </tr>
+    </table><br>    
+    <input type="submit" value="추가">
+</form>
+{% endblock %}

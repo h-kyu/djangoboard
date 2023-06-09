@@ -1,0 +1,13 @@
+{% extends 'board/base.html' %}
+{% block title %}삭제{% endblock title %}
+{% block headline%}삭제 페이지{% endblock %}
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    선택한 게시글 {{info.title}} {{info.writer}}를 정말 삭제 하시겠습니까?
+    <p><input type="submit" value="삭제"></p>
+</form><br>
+<a href="{% url 'board:list' %}">취소</a> 
+
+{% endblock %}

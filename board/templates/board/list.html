@@ -1,0 +1,27 @@
+{% extends 'board/base.html' %}
+{% block title %}리스트{% endblock title %}
+{% block headline%}리스트{% endblock %}
+{% block content %}
+
+<table class="table">
+    <thead>
+        <tr>
+          <th scope="col">번호</th>
+          <th scope="col">제목</th>
+          <th scope="col">작성자</th>
+          <th scope="col">조회수</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+    {% for info in board_list %}
+    <tr>
+        <th scope="row">{{info.id}}</th>
+        <td><a href="{% url 'board:detail' info.id %}">{{info.title}}</a></td>
+        <td>{{info.writer}}</td>
+        <td>{{info.readcount}}</td>
+    </tr>
+    {% endfor %}
+</table><br>
+<button type="button" class="btn btn-info" onclick="location.href='{% url 'board:addboard' %}'">글등록</button>
+
+{% endblock %}
